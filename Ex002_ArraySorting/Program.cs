@@ -23,20 +23,38 @@ void SelectionSort(int[] array)
         {
             if(array[j] < array[minPosition])  minPosition = j;
         }
-
-
         int temporary = array[i];
         array[i] = array[minPosition];
         array[minPosition] = temporary;
-
     }
-
-
 }
+
+void SelSortDown(int[] array)
+{
+for(int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+
+        for(int j = i+1; j < array.Length; j++)
+        {
+            if(array[j] > array[maxPosition])  maxPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
+    }
+}
+
+
+
 
 PrintArray(arr);
 
 SelectionSort(arr);
+
+PrintArray(arr);
+
+SelSortDown(arr);
 
 PrintArray(arr);
 
